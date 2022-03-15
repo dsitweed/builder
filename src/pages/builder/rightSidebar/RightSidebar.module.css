@@ -1,0 +1,19 @@
+.container {
+  z-index: 20;
+  box-shadow: var(--right-shadow);
+  @apply py-6 h-screen flex flex-col items-center;
+}
+
+.icon {
+  @apply cursor-pointer;
+}
+
+.icon:focus {
+  @apply outline-none text-primary-900;
+  transition: all 0.3s;
+}
+
+.icon:hover {
+  @apply text-primary-900;
+  transition: all 0.3s;
+}

@@ -1,0 +1,85 @@
+.container {
+  @apply relative flex items-start overflow-hidden;
+  height: calc(100vh - 57px);
+}
+
+.left {
+  box-shadow: var(--left-shadow);
+  @apply bg-primary-50 z-10 h-full;
+  min-width: 35%;
+  max-width: 35%;
+}
+
+.center {
+  @apply relative h-full flex-grow overflow-x-auto;
+}
+
+.cv_building {
+  @apply z-10 h-full overflow-y-auto bg-gray-200 py-4;
+}
+
+.right {
+  min-width: 50px;
+  box-shadow: var(--right-shadow);
+  @apply h-full bg-primary-50 z-10;
+}
+
+.cv_building::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.cv_building::-webkit-scrollbar {
+  width: 12px;
+}
+
+.cv_building::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 25px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.cv_building::-webkit-scrollbar-thumb:hover {
+  background-color: #a5a5a5;
+}
+
+.center .wrap_cv {
+  @apply px-4 mx-auto;
+}
+
+.center .effect {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  @apply w-min;
+  height: fit-content;
+}
+
+.top_cv_building {
+  @apply absolute top-0 left-0 py-2 px-5;
+}
+
+.top_cv_building:hover .zoom_box {
+  @apply visible opacity-100 transition-all duration-300;
+}
+
+.zoom_box {
+  @apply invisible opacity-0 flex text-white;
+}
+
+.zoom_box .zoom_icon {
+  font-size: 1.5rem;
+  @apply py-2 px-3 cursor-pointer;
+  @apply bg-black bg-opacity-60;
+}
+
+.zoom_box .zoom_icon.head {
+  @apply rounded-l-full;
+}
+
+.zoom_box .zoom_icon.last {
+  @apply rounded-r-full;
+}
+
+.zoom_box .zoom_icon:hover {
+  @apply bg-opacity-80 transition-all duration-300;
+}

@@ -1,0 +1,29 @@
+.menu_btn {
+  focus: ring-blue-500;
+  @apply bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400;
+  @apply hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset;
+}
+
+.nav_link {
+  @apply text-base whitespace-nowrap cursor-pointer text-gray-900 hover:text-gray-700;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.nav_user {
+  @apply text-base whitespace-nowrap cursor-pointer text-gray-900 hover:text-gray-700;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  @apply px-2 transition-all rounded;
+}
+
+.nav_user:hover {
+  @apply bg-gray-200 rounded;
+}
+
+.mobile-menu {
+  @apply absolute top-0 inset-x-0 p-4 z-50 transition transform origin-top-right md:hidden;
+  .nav-link {
+    @apply -mx-3 p-3 flex items-center rounded-md hover:bg-gray-100;
+  }
+}

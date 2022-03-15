@@ -1,0 +1,8 @@
+.circle {
+  @apply flex items-center justify-center cursor-pointer bg-white text-primary-500 rounded-full;
+  @apply transition-opacity duration-200 ease-in-out;
+}
+
+.circle:focus {
+  @apply outline-none;
+}

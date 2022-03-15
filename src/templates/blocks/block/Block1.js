@@ -1,0 +1,39 @@
+import React, { memo } from "react";
+import { safetyCheck } from "../../../utils";
+import { onScroll } from "../../hook";
+import { Item1 } from "../CommonItems";
+
+const Block1 = ({ id, data, className, headingClass, heading: Heading }) => {
+  const realData = data["struct"][id];
+
+  return safetyCheck(realData) ? (
+    <div className={className}>
+      <Heading
+        data={data}
+        className={headingClass}
+        children={realData.heading}
+        onClick={() => onScroll(realData.id)}
+      />
+      <div className="grid grid-cols-2 gap-4">
+        {realData.items
+          .filter((x) => x.visible)
+          .map((element, index) => {
+            return (
+              <Item1
+                key={index}
+                id={id}
+                data={element}
+                language={data.options.language}
+                onItemClick={() => onScroll(element.id)}
+                isDisplayAccuracy={
+                  data.options.accuracy ? data.options.accuracy : false
+                }
+              />
+            );
+          })}
+      </div>
+    </div>
+  ) : null;
+};
+
+export default memo(Block1);

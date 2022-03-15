@@ -1,0 +1,13 @@
+@import "~react-toastify/dist/ReactToastify.css";
+.Toastify__toast {
+  @apply shadow rounded;
+}
+
+.Toastify__toast--default {
+  @apply bg-primary-50 text-primary-900;
+}
+
+.Toastify__toast-body {
+  font-family: "Montserrat", sans-serif;
+  @apply font-medium;
+}

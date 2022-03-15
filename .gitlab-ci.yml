@@ -1,0 +1,76 @@
+stages:
+  - test
+  - build
+  - deploy-prod
+
+# test:
+#   stage: test
+#   image: node:14.16.0-alpine
+#   script:
+#     - echo "Testing App"
+#     - npm install
+#     - CI=true npm test
+#     - echo "Test successfully!"
+
+tag-release:
+  stage: build
+  image: docker:18.09.8-dind
+  services:
+    - docker:18.09.8-dind
+  only:
+    - tags
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - echo "Start building"
+    - docker build -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG" .
+    - echo "Build successfully"
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG"
+    - echo "Pushed to registry $CI_REGISTRY_IMAGE"
+  after_script:
+    - docker logout "$CI_REGISTRY_IMAGE"
+
+build-and-push:
+  stage: build
+  image: docker:18.09.8-dind
+  services:
+    - docker:18.09.8-dind
+  only:
+    - master
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - echo "Start building"
+    # build latest image
+    - docker build -t "$CI_REGISTRY_IMAGE" .
+    - echo "Build successfully"
+    - docker push "$CI_REGISTRY_IMAGE"
+    - echo "Pushed to registry $CI_REGISTRY_IMAGE"
+  after_script:
+    - docker logout "$CI_REGISTRY_IMAGE"
+
+deploy-production:
+  stage: deploy-prod
+  image: kroniak/ssh-client
+  only:
+    - master
+  before_script:
+    - echo "deploying project"
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > key.pem
+    - chown 400 key.pem
+  script:
+    #ssh -o StrictHostKeyChecking=no -i <private_key> <user_in_server>@<server_ip> "<command>"
+    - > 
+      ssh -o StrictHostKeyChecking=no -i key.pem civipro@$PROD_SERVER_IP "
+        echo "========== docker login ==========";
+        docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY;
+        echo "========== ls -a ==========";
+        ls -a;
+        echo "========== cd $DEPLOY_DIR ==========";
+        cd $DEPLOY_DIR;
+        echo "========== run deploy script ==========";
+        echo "APP_IMAGE=$CI_REGISTRY_IMAGE:latest ./deploy.sh";
+        APP_IMAGE=$CI_REGISTRY_IMAGE:latest ./deploy.sh;
+        echo "========== docker logout ==========";
+        docker logout ${CI_REGISTRY};
+      "

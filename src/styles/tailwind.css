@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  @apply text-primary-900 bg-primary-50;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum", "tnum";
+}
+
+#page {
+  width: 827px;
+  min-height: 1169px;
+}
+
+#page a:hover {
+  text-decoration: underline;
+}
+
+#page .text-xs {
+  font-size: var(--text-xs-size);
+  line-height: var(--text-xs-line-height);
+}
+
+#page .text-sm {
+  font-size: var(--text-sm-size);
+  line-height: var(--text-sm-line-height);
+}
+
+#page .text-lg {
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-line-height);
+}
+
+#page .text-xl {
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-line-height);
+}
+
+#page .text-2xl {
+  font-size: var(--text-2xl-size);
+  line-height: var(--text-2xl-line-height);
+}
+
+#page .text-3xl {
+  font-size: var(--text-3xl-size);
+  line-height: var(--text-3xl-line-height);
+}
+
+#page .text-4xl {
+  font-size: var(--text-4xl-size);
+  line-height: var(--text-4xl-line-height);
+}

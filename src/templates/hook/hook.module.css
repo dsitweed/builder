@@ -1,0 +1,19 @@
+.blockHighlight {
+  animation-name: highlight;
+  animation-duration: 3s;
+}
+
+@keyframes highlight {
+  0% {
+    background-color: inherit;
+  }
+  40% {
+    background-color: #dbedfc;
+  }
+  75% {
+    background-color: #ebf6ff;
+  }
+  100% {
+    background-color: inherit;
+  }
+}

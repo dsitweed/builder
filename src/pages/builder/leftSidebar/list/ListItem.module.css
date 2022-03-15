@@ -1,0 +1,39 @@
+.list {
+  cursor: pointer;
+  border-bottom: 1px;
+  border-color: red;
+  @apply relative pl-2 py-1;
+}
+
+.listItem {
+  @apply flex items-center justify-between relative border-primary-200 px-6 py-5;
+}
+
+.menu {
+  height: auto;
+  @apply flex absolute left-0 inset-y-0 items-center;
+  @apply opacity-0 transition-opacity duration-200 ease-in-out;
+}
+
+.menuHover {
+  @apply opacity-100;
+  @apply transition-opacity duration-200 ease-in-out;
+}
+
+.listItemGrid {
+  @apply grid w-9/12 relative items-center;
+}
+
+.listItemGridHover {
+  @apply opacity-5 transition duration-300 ease-in-out;
+}
+
+.buttonItem {
+  height: auto;
+  @apply flex flex-row visible absolute right-0 inset-y-0 items-center mr-5;
+  @apply transform hover:scale-125 duration-300 ease-in-out;
+}
+
+.buttonFunction {
+  @apply ml-5 transform hover:scale-125 duration-300 ease-in-out;
+}

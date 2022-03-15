@@ -1,0 +1,183 @@
+[
+  {
+    "templateName": "Template1",
+    "imgUrl": "https://firebasestorage.googleapis.com/v0/b/civipro-4d091.appspot.com/o/templates%2FCastform.png?alt=media&token=c1b11a52-0d3d-4c1a-be97-08415fa49727",
+    "struct": {
+      "profile": {
+        "address": "",
+        "country": "",
+        "birthDate": "",
+        "email": "",
+        "firtname": "",
+        "lastname": "",
+        "phone": "",
+        "backgroundImage": "",
+        "industry": "",
+        "subtitle": "",
+        "website": ""
+      },
+      "social": {
+        "items": [],
+        "visible": true
+      },
+      "summary": {
+        "body": "",
+        "visible": true
+      },
+      "work": {
+        "visible": true,
+        "items": []
+      },
+      "education": {
+        "items": [],
+        "visible": true
+      },
+      "skills": {
+        "items": [],
+        "visible": true
+      },
+      "hobbies": {
+        "items": [],
+        "visible": true
+      },
+      "languages": {
+        "items": [],
+        "visible": true
+      },
+      "publications": {
+        "visible": true,
+        "items": []
+      },
+      "courses": {
+        "visible": true,
+        "items": []
+      },
+      "research": {
+        "visible": true,
+        "items": []
+      },
+      "projects": {
+        "visible": true,
+        "items": []
+      },
+      "awards": {
+        "visible": true,
+        "items": []
+      },
+      "custom": {
+        "visible": true,
+        "items": []
+      },
+      "certifications": {
+        "visible": true,
+        "items": []
+      },
+      "references": {
+        "visible": true,
+        "items": []
+      },
+      "topic": {
+        "items": [],
+        "visible": true
+      },
+      "undergradStudents": {
+        "items": [],
+        "visible": true
+      },
+      "postgradStudents": {
+        "items": [],
+        "visible": true
+      }
+    },
+    "options": {
+      "fontOptions": ["Arial", "Times New Roman", "Courier new"],
+      "fontSizeOptions": {
+        "--text-xs-size": 0.75,
+        "--text-sm-size": 0.875,
+        "--text-lg-size": 1.125,
+        "--text-xl-size": 1.25,
+        "--text-2xl-size": 1.5,
+        "--text-3xl-size": 1.875,
+        "--text-4xl-size": 2.25,
+        "--text-xs-line-height": 1,
+        "--text-sm-line-height": 1.25,
+        "--text-lg-line-height": 1.75,
+        "--text-xl-line-height": 1.75,
+        "--text-2xl-line-height": 2,
+        "--text-3xl-line-height": 2.25,
+        "--text-4xl-line-height": 2.5
+      },
+      "colorOptions": [
+        "#F44336",
+        "#E91E63",
+        "#9C27B0",
+        "#673AB7",
+        "#3F51B5",
+        "#2196F3",
+        "#03A9F4",
+        "#00BCD4",
+        "#009688",
+        "#4CAF50",
+        "#8BC34A",
+        "#CDDC39",
+        "#FFEB3B",
+        "#FFC107",
+        "#FF9800",
+        "#FF5722"
+      ],
+      "font": "Arial",
+      "fontSize": 12,
+      "colors": {
+        "background": "#FFFFFF",
+        "primary": "#3F51B5",
+        "text": "#212121",
+        "accuracy": "#03A9F4"
+      }
+    },
+    "metadata": {
+      "liked": 0,
+      "used": 0
+    },
+    "layout": [
+      ["languages", "hobbies"],
+      [
+        "summary",
+        "education",
+        "work",
+        "awards",
+        "research",
+        "publications",
+        "skills",
+        "certifications",
+        "projects",
+        "custom",
+        "courses",
+        "topic",
+        "undergradStudents",
+        "postgradStudents",
+        "references"
+      ]
+    ],
+    "sections": {
+      "profile": true,
+      "social": true,
+      "summary": true,
+      "work": true,
+      "education": true,
+      "publications": true,
+      "research": true,
+      "projects": true,
+      "awards": true,
+      "skills": true,
+      "hobbies": true,
+      "languages": true,
+      "custom": false,
+      "certifications": false,
+      "courses": false,
+      "references": false,
+      "topic": false,
+      "undergradStudents": false,
+      "postgradStudents": false
+    }
+  }
+]

@@ -1,0 +1,150 @@
+/* base modal */
+
+.root {
+  @apply flex items-center justify-center;
+}
+
+.modal {
+  width: min(600px, calc(100vw - 100px));
+  max-height: 650px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @apply p-8 rounded bg-primary-50 outline-none relative;
+}
+
+.modal .title {
+  @apply flex items-center justify-between;
+}
+
+.modal .title h2 {
+  @apply text-3xl;
+}
+
+.modal .title svg {
+  @apply cursor-pointer;
+}
+
+.modal .body {
+  @apply mt-8 mb-10;
+}
+
+.modal .actions {
+  @apply flex justify-end;
+}
+
+/* section modal */
+
+.sectionList {
+  position: relative;
+  left: -4px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.section {
+  flex-flow: row nowrap;
+  margin: 0 20px 12px 0;
+  user-select: none;
+  color: rgb(38, 43, 51);
+  @apply flex items-center cursor-pointer;
+}
+
+/* template modal */
+
+.cvTemplate {
+  @apply w-full flex flex-shrink transition-all duration-500 transform hover:scale-105;
+}
+
+.cvContent {
+  @apply relative flex-1 shadow-md rounded overflow-hidden;
+}
+
+.overlay {
+  @apply absolute bg-black opacity-0 transform -translate-y-full;
+  @apply transition-all duration-300 ease-in-out top-0 right-0 left-0 h-0;
+}
+
+.cvMeta {
+  @apply inset-0 h-full;
+  @apply opacity-0 invisible;
+  @apply transition-all duration-500 ease-in-out;
+  @apply absolute flex-col flex items-center justify-center px-1;
+}
+
+.cvContent:hover .overlay {
+  @apply transform translate-y-0 opacity-70 inset-0 h-full;
+}
+
+.cvContent:hover .cvMeta {
+  @apply opacity-100 visible;
+}
+
+/* setting modal */
+
+.itemList {
+  @apply flex space-x-2 items-center font-semibold text-gray-600 p-2 rounded-lg w-full focus:outline-none;
+}
+
+.theme {
+  margin: auto;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.icon {
+  color: red;
+}
+
+.icon:hover {
+  color: "rgba(127, 29, 29, var(--tw-text-opacity))";
+}
+
+/* font setting */
+
+.circle {
+  @apply cursor-pointer rounded-full h-6 w-6;
+}
+
+.circle:focus {
+  @apply outline-none;
+}
+
+.circle:hover {
+  @apply opacity-75;
+}
+
+.fontSizeContainer {
+  @apply flex p-1 bg-blue-100 rounded-md;
+}
+
+.fontSizeButton {
+  @apply p-3 rounded-md cursor-pointer;
+}
+
+/* shared cv */
+
+.shareInput {
+  @apply overflow-hidden flex-initial overflow-ellipsis w-11/12 text-xl border-0 bg-gray-200 p-2;
+  @apply rounded-md outline-none focus:outline-none;
+}
+
+.copyInput {
+  @apply w-1/6 flex-initial text-center bg-blue-100 p-2 ml-5;
+  @apply rounded-md outline-none focus:outline-none;
+  @apply cursor-pointer font-bold text-blue-500;
+  @apply hover:bg-blue-400 hover:text-white;
+  @apply duration-300 ease-in-out;
+}
+
+.accuracyButton {
+  @apply bg-blue-200 font-bold text-blue-500 rounded-md m-3 p-3;
+  @apply focus:outline-none hover:bg-blue-400 hover:text-white;
+  @apply duration-300 ease-in-out;
+}
+
+/* import source */
+
+.importButton {
+  @apply outline-none focus:outline-none shadow-none bg-blue-200;
+  @apply hover:bg-blue-300;
+}

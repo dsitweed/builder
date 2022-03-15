@@ -1,0 +1,6 @@
+.board {
+  @apply relative overflow-hidden h-full rounded-md;
+  width: auto;
+  border: 2px solid #0377fc;
+  box-sizing: border-box;
+}
